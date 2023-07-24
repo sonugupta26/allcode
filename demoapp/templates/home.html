@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>home page</h1>
+    <p>
+        <a href="{% url 'demoapp:about' %}">About</a>
+    </p>
+    <p>
+        <a href="{% url 'demoapp:contact' %}">Contact</a>
+    </p>
+    <p>
+        <a href="{% url 'demoapp:addresh' %}">Address</a>
+    </p>
+    <h2>Students List</h2>
+    {% for i in students %}
+        <p>Name: {{i.name}}</p>
+        <p>Contact: {{i.contact}}</p>
+        <p>Address: {{i.addresh}}</p>
+        <br>
+
+
+    {% endfor%}
+</body>
+</html>
